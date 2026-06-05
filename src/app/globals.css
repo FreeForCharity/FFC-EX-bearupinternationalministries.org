@@ -12,11 +12,36 @@
   /* Layout */
   --ffc-container: 1248px;
   --ffc-radius-xl: 20px;
+
+  /* Bearup International Ministries — church-specific tokens */
+  --church-primary: #2a6682;
+  --church-primary-deep: #1c4c61;
+  --church-primary-hero: #2e6f8e;
+  --church-accent: #f58629;
+  --church-accent-deep: #e0741a;
+  --church-gold: #e2a23b;
+  --church-btn-ink: #113563;
+  --church-ink: #1b2a31;
+  --church-ink-soft: #4a5c64;
+  --church-muted: #6b7c84;
+  --church-cream: #faf6ef;
+  --church-cream-deep: #f3ebdd;
+  --church-line: #e6ddcf;
+  --church-shadow-sm: 0 2px 10px rgba(27, 42, 49, 0.06);
+  --church-shadow: 0 14px 40px rgba(27, 42, 49, 0.1);
+  --church-shadow-lg: 0 30px 70px rgba(27, 42, 49, 0.16);
+  --church-radius: 20px;
+  --church-font-display: var(--font-faustina), Georgia, serif;
+  --church-font-sans: var(--font-lato), -apple-system, system-ui, sans-serif;
 }
 
 html,
 body {
   scroll-behavior: smooth !important;
+}
+
+html {
+  scroll-padding-top: 96px;
 }
 
 @theme inline {
@@ -185,6 +210,68 @@ body {
   outline: 2px solid #2a6682;
   outline-offset: 2px;
   text-decoration: underline;
+}
+
+/* ========== Bearup International Ministries church styles ========== */
+.church-wide {
+  width: 90%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.church-eyebrow {
+  font-family: var(--church-font-sans);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--church-accent);
+  margin: 0 0 16px;
+  display: block;
+}
+
+.church-section-head {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 56px;
+}
+
+.church-section-head h2 {
+  font-family: var(--church-font-display);
+  font-weight: 500;
+  font-size: clamp(34px, 4.6vw, 48px);
+  color: var(--church-ink);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.church-section-head p {
+  margin: 20px 0 0;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--church-ink-soft);
+}
+
+.church-ph {
+  position: relative;
+  background: repeating-linear-gradient(135deg, #e9eef1 0 14px, #eef3f5 14px 28px);
+  display: grid;
+  place-items: center;
+  color: #7f939c;
+  overflow: hidden;
+}
+
+.church-ph::after {
+  content: attr(data-label);
+  font-family: var(--font-lato), monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8499a2;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
 }
 
 /* Hide scrollbar globally */

@@ -59,32 +59,30 @@ export type SiteConfig = {
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'Free For Charity',
-  tagline: 'Reduce Costs, Increase Impact',
+  name: 'Bearup International Ministries',
+  tagline: 'Bringing Jesus Christ to the World',
   description:
-    'Free For Charity connects students, professionals, and businesses with nonprofits to reduce costs and increase revenues—putting more resources back into their missions.',
+    'Bearup International Ministries is a Spirit-filled, non-denominational church ministry based in Soldotna, Alaska, devoted to worship, discipleship, and carrying the Gospel to the nations.',
   shortDescription:
-    'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
-  url: 'https://ffcworkingsite1.org',
-  twitterHandle: '@freeforcharity',
-  contactEmail: 'security@freeforcharity.org',
+    'A Spirit-filled family bringing Jesus Christ to the world — worshipping, growing, and going to the nations.',
+  url: 'https://bearupinternationalministries.org',
+  twitterHandle: '',
+  contactEmail: 'Info@bearupinternationalministries.org',
   keywords: [
-    'nonprofit',
-    'charity',
-    'volunteer',
-    'donate',
-    'free hosting',
-    'domains',
-    'Microsoft 365',
+    'church',
+    'ministry',
+    'Soldotna',
+    'Alaska',
+    'missions',
+    'Gospel',
+    'non-denominational',
+    'worship',
+    'Bearup International Ministries',
+    '501c3',
   ],
-  themeColor: '#ffffff',
+  themeColor: '#2a6682',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
-  social: [
-    { label: 'Facebook', href: 'https://www.facebook.com/freeforcharity' },
-    { label: 'X (Twitter)', href: 'https://x.com/freeforcharity1' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/freeforcharity/' },
-    { label: 'GitHub', href: 'https://github.com/FreeForCharity/FFC_Single_Page_Template' },
-  ],
+  social: [],
 }
 
 /**

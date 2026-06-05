@@ -106,13 +106,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.zeffy.com" />
         <link rel="dns-prefetch" href="https://www.idealist.org" />
 
-        {/* Preload critical LCP image */}
-        <link
-          rel="preload"
-          as="image"
-          href={assetPath('/Images/figma-hero-img.webp')}
-          fetchPriority="high"
-        />
+        {/* LCP preload: add a hero image path here once photography is available */}
 
         <GoogleTagManager />
       </head>

@@ -8,10 +8,12 @@ const GTM_ID = 'GTM-TQ5H8HPR'
 export default function GoogleTagManager() {
   return (
     <>
-      {/* Google Tag Manager Script - loaded with lazyOnload for better performance */}
+      {/* Google Tag Manager Script - afterInteractive so analytics loads right
+          after hydration and captures the initial pageview (lazyOnload defers
+          to browser idle, which can drop early events). */}
       <Script
         id="gtm-script"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

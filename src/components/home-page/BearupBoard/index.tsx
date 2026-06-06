@@ -1,11 +1,25 @@
 import React from 'react'
+import Image from 'next/image'
+import { assetPath } from '@/lib/assetPath'
 
 const boardMembers = [
   { initial: 'T', bg: '#2a6682', name: 'Dr. Thomas R. Bearup', role: 'Board Chair / President' },
   { initial: 'A', bg: '#f58629', name: 'Adele M. Bearup', role: 'Secretary & Treasurer' },
-  { initial: 'P', bg: '#1c4c61', name: 'Dr. Patrick Bearup Sr.', role: 'Director' },
+  {
+    initial: 'P',
+    bg: '#1c4c61',
+    name: 'Dr. Patrick Bearup Sr.',
+    role: 'Director',
+    photo: assetPath('/Images/patrick-bearup.jpg'),
+  },
   { initial: 'R', bg: '#e2a23b', name: 'Robyn Faucheux', role: 'Director' },
-  { initial: 'R', bg: '#5a8a6a', name: 'Rebekah Freeman', role: 'Director' },
+  {
+    initial: 'R',
+    bg: '#5a8a6a',
+    name: 'Rebekah Freeman',
+    role: 'Director',
+    photo: assetPath('/Images/board-rebekah-freeman.jpg'),
+  },
 ]
 
 const BearupBoard: React.FC = () => {
@@ -51,6 +65,7 @@ const BearupBoard: React.FC = () => {
               <span
                 style={{
                   flex: 'none',
+                  position: 'relative',
                   width: '64px',
                   height: '64px',
                   borderRadius: '50%',
@@ -58,22 +73,32 @@ const BearupBoard: React.FC = () => {
                   boxShadow: 'inset 0 0 0 3px rgba(255,255,255,.22), 0 0 0 1px var(--church-line)',
                 }}
               >
-                <div
-                  style={{
-                    width: '64px',
-                    height: '64px',
-                    borderRadius: '50%',
-                    background: m.bg,
-                    display: 'grid',
-                    placeItems: 'center',
-                    fontFamily: 'var(--church-font-display)',
-                    fontSize: '22px',
-                    fontWeight: 600,
-                    color: '#fff',
-                  }}
-                >
-                  {m.initial}
-                </div>
+                {'photo' in m && m.photo ? (
+                  <Image
+                    src={m.photo}
+                    alt={m.name}
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                    sizes="64px"
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: '50%',
+                      background: m.bg,
+                      display: 'grid',
+                      placeItems: 'center',
+                      fontFamily: 'var(--church-font-display)',
+                      fontSize: '22px',
+                      fontWeight: 600,
+                      color: '#fff',
+                    }}
+                  >
+                    {m.initial}
+                  </div>
+                )}
               </span>
               <div>
                 <h3

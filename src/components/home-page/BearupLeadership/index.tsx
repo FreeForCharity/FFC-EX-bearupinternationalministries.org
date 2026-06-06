@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image'
+import { assetPath } from '@/lib/assetPath'
 
 const linkedinIcon = (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
@@ -18,6 +20,7 @@ const leaders = [
     name: 'Dr. Patrick Bearup Sr.',
     role: 'Associate Pastor',
     linkedin: null,
+    photo: assetPath('/Images/patrick-bearup.jpg'),
   },
   {
     label: 'Adele M. Bearup',
@@ -63,7 +66,19 @@ const BearupLeadership: React.FC = () => {
                 transition: 'transform .22s ease, box-shadow .22s ease',
               }}
             >
-              <div className="church-ph" data-label={l.label} style={{ aspectRatio: '1' }} />
+              {'photo' in l && l.photo ? (
+                <div style={{ position: 'relative', aspectRatio: '1' }}>
+                  <Image
+                    src={l.photo}
+                    alt={l.name}
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                    sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw"
+                  />
+                </div>
+              ) : (
+                <div className="church-ph" data-label={l.label} style={{ aspectRatio: '1' }} />
+              )}
               <div
                 style={{
                   padding: '22px 24px 26px',

@@ -1,4 +1,4 @@
-# RFC 9116 security.txt — root-path copy.
+# RFC 9116 security.txt — root-path copy for Bearup International Ministries.
 # This file MUST stay byte-for-byte identical to public/.well-known/security.txt
 # below the header block. The drift checker enforces it.
 #
@@ -9,10 +9,10 @@
 # reachable file via the root. RFC 9116 §2.5.2 allows multiple Canonical
 # lines to advertise both URLs.
 
-Contact: mailto:security@freeforcharity.org
+Contact: mailto:Info@bearupinternationalministries.org
 Expires: 2027-01-01T00:00:00.000Z
 Preferred-Languages: en
-Canonical: https://ffcworkingsite1.org/.well-known/security.txt
-Canonical: https://ffcworkingsite1.org/security.txt
-Policy: https://ffcworkingsite1.org/vulnerability-disclosure-policy
-Acknowledgments: https://ffcworkingsite1.org/security-acknowledgements
+Canonical: https://bearupinternationalministries.org/.well-known/security.txt
+Canonical: https://bearupinternationalministries.org/security.txt
+Policy: https://bearupinternationalministries.org/vulnerability-disclosure-policy
+Acknowledgments: https://bearupinternationalministries.org/security-acknowledgements

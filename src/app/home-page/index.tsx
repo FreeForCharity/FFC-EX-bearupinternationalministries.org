@@ -1,32 +1,39 @@
 import React from 'react'
-import Hero from '@/components/home-page/Hero'
-import Mission from '@/components/home-page/Mission'
-import SupportFreeForCharity from '@/components/home-page/SupportFreeForCharity'
-import EndowmentFeatures from '@/components/home-page/Endowment-Features'
-import OurPrograms from '@/components/home-page/Our-Programs'
-import VolunteerwithUs from '@/components/home-page/Volunteer-with-Us'
-import Results2023 from '@/components/home-page/Results-2023'
-import Testimonials from '@/components/home-page/Testimonials'
-import TheFreeForCharityTeam from '@/components/home-page/TheFreeForCharityTeam'
-import FrequentlyAskedQuestions from '@/components/home-page/FrequentlyAskedQuestions'
-import Events from '@/components/home-page/Events'
+import BearupHero from '@/components/home-page/BearupHero'
+import BearupScripture from '@/components/home-page/BearupScripture'
+import BearupAbout from '@/components/home-page/BearupAbout'
+import BearupVisit from '@/components/home-page/BearupVisit'
+import BearupMinistries from '@/components/home-page/BearupMinistries'
+import BearupSchedule from '@/components/home-page/BearupSchedule'
+import BearupLeadership from '@/components/home-page/BearupLeadership'
+import BearupBoard from '@/components/home-page/BearupBoard'
+import BearupGive from '@/components/home-page/BearupGive'
+import BearupFaq from '@/components/home-page/BearupFaq'
 
-const index = () => {
+const BearupHomePage = () => {
   return (
     <div>
-      <Hero />
-      <Mission />
-      <Results2023 />
-      <Testimonials />
-      <VolunteerwithUs />
-      <Events />
-      <SupportFreeForCharity />
-      <EndowmentFeatures />
-      <OurPrograms />
-      <FrequentlyAskedQuestions />
-      <TheFreeForCharityTeam />
+      <span id="top" aria-hidden="true" />
+      <BearupHero />
+      <BearupScripture />
+      <BearupAbout />
+      <div
+        style={{
+          width: '95%',
+          maxWidth: '1280px',
+          margin: '0 auto',
+          borderTop: '1px solid #e6ddcf',
+        }}
+      />
+      <BearupVisit />
+      <BearupMinistries />
+      <BearupSchedule />
+      <BearupLeadership />
+      <BearupBoard />
+      <BearupGive />
+      <BearupFaq />
     </div>
   )
 }
 
-export default index
+export default BearupHomePage

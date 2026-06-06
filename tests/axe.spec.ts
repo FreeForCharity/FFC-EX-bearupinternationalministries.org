@@ -27,7 +27,12 @@ const BASELINE_ALLOWLIST = new Set<string>([
 test.describe('axe-core homepage guardrail', () => {
   test('homepage has no new serious or critical violations', async ({ page }) => {
     await page.goto('/')
-    await page.waitForLoadState('networkidle')
+    // Wait for the 'load' event rather than 'networkidle'. The homepage loads
+    // Google Tag Manager via a lazyOnload script that keeps issuing network
+    // requests, so 'networkidle' never settles and times out in CI. 'load'
+    // guarantees the DOM and styles are ready for the axe scan. (Same rationale
+    // as the networkidle avoidance noted in events.spec.ts.)
+    await page.waitForLoadState('load')
 
     const results = await new AxeBuilder({ page })
       .include('body')

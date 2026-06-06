@@ -9,6 +9,7 @@ const ministries = [
     desc: 'Gathering weekly to lift up the name of Jesus through song, prayer, and the presence of the Holy Spirit.',
     linkText: 'Join us Sunday →',
     linkHref: '#visit',
+    photo: assetPath('/Images/ministry-worship.jpg'),
   },
   {
     label: 'Small Group Photo',

@@ -3,8 +3,20 @@ import Image from 'next/image'
 import { assetPath } from '@/lib/assetPath'
 
 const boardMembers = [
-  { initial: 'T', bg: '#2a6682', name: 'Dr. Thomas R. Bearup', role: 'Board Chair / President' },
-  { initial: 'A', bg: '#f58629', name: 'Adele M. Bearup', role: 'Secretary & Treasurer' },
+  {
+    initial: 'T',
+    bg: '#2a6682',
+    name: 'Dr. Thomas R. Bearup',
+    role: 'Board Chair / President',
+    photo: assetPath('/Images/tom-bearup.jpg'),
+  },
+  {
+    initial: 'A',
+    bg: '#f58629',
+    name: 'Adele M. Bearup',
+    role: 'Secretary & Treasurer',
+    photo: assetPath('/Images/adele-bearup.jpg'),
+  },
   {
     initial: 'P',
     bg: '#1c4c61',

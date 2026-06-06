@@ -14,6 +14,7 @@ const leaders = [
     name: 'Dr. Thomas R. Bearup',
     role: 'Senior Pastor & Founder',
     linkedin: 'https://www.linkedin.com/in/dr-tom-bearup-b00bb06/',
+    photo: assetPath('/Images/tom-bearup.jpg'),
   },
   {
     label: 'Dr. Patrick Bearup Sr.',
@@ -27,6 +28,7 @@ const leaders = [
     name: 'Adele M. Bearup',
     role: "Youth & Women's Ministry",
     linkedin: null,
+    photo: assetPath('/Images/adele-bearup.jpg'),
   },
 ]
 

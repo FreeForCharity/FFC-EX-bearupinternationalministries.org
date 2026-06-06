@@ -2,9 +2,18 @@ import React from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
+/*
+ * TODO (church/legal to confirm before publishing):
+ *  - Legal entity name & EIN for the 501(c)(3)
+ *  - Actual data-collection & cookie practices (analytics: GTM GTM-TQ5H8HPR; donations: Zeffy)
+ *  - Verify the third-party services list matches what the site actually loads
+ *  - Effective/last-updated date
+ * This is an automated first-draft rebrand; legal content has NOT been reviewed.
+ */
+
 export const metadata: Metadata = {
-  title: 'Security Acknowledgements | Free For Charity',
-  description: 'Security Acknowledgements for Free For Charity website',
+  title: 'Security Acknowledgements | Bearup International Ministries',
+  description: 'Security Acknowledgements for Bearup International Ministries website',
 }
 
 const index = () => {
@@ -16,10 +25,10 @@ const index = () => {
             Security Acknowledgements
           </h2>
           <p className="mb-[20px] pb-[10px] text-[14px] font-[500] leading-[25px] text-[#666]">
-            Free For Charity would like to extend our sincere gratitude to the following security
-            researchers for their invaluable contributions in helping us keep our platform safe. By
-            responsibly disclosing vulnerabilities, they have played a crucial role in protecting
-            our users and our data.
+            Bearup International Ministries would like to extend our sincere gratitude to the
+            following security researchers for their invaluable contributions in helping us keep our
+            platform safe. By responsibly disclosing vulnerabilities, they have played a crucial
+            role in protecting our users and our data.
           </p>
           <div
             className="bg-[#f9f9f9] border-l-[5px] border-[#cccccc] p-[20px] mt-[30px] mb-[30px]"

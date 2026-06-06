@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image'
+import { assetPath } from '@/lib/assetPath'
 
 const ministries = [
   {
@@ -14,6 +16,7 @@ const ministries = [
     desc: 'Small groups and Bible studies where we grow together in the Word and walk closely as a community.',
     linkText: 'Find a group →',
     linkHref: '#schedule',
+    photo: assetPath('/Images/ministry-discipleship.jpg'),
   },
   {
     label: 'Missions Photo',
@@ -21,6 +24,7 @@ const ministries = [
     desc: 'Carrying the Gospel beyond our walls — locally and to the nations — through service and compassion.',
     linkText: 'Support missions →',
     linkHref: '#give',
+    photo: assetPath('/Images/ministry-missions.png'),
   },
   {
     label: 'Children & Youth',
@@ -28,6 +32,7 @@ const ministries = [
     desc: 'Safe, joyful spaces where the next generation discovers the love of Jesus in age-appropriate ways.',
     linkText: 'Learn more →',
     linkHref: '#visit',
+    photo: assetPath('/Images/ministry-children.png'),
   },
   {
     label: 'Prayer Ministry',
@@ -35,6 +40,7 @@ const ministries = [
     desc: 'A dedicated team ready to stand with you in prayer for healing, breakthrough, and guidance.',
     linkText: 'Request prayer →',
     linkHref: '#give',
+    photo: assetPath('/Images/ministry-prayer.jpg'),
   },
 ]
 
@@ -73,7 +79,19 @@ const BearupMinistries: React.FC = () => {
                 transition: 'transform .22s ease, box-shadow .22s ease',
               }}
             >
-              <div className="church-ph" data-label={m.label} style={{ aspectRatio: '16/10' }} />
+              {'photo' in m && m.photo ? (
+                <div style={{ position: 'relative', aspectRatio: '16/10' }}>
+                  <Image
+                    src={m.photo}
+                    alt={m.title}
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw"
+                  />
+                </div>
+              ) : (
+                <div className="church-ph" data-label={m.label} style={{ aspectRatio: '16/10' }} />
+              )}
               <div
                 style={{
                   padding: '26px 26px 30px',

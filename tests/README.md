@@ -17,15 +17,15 @@ unit tests → Playwright browser install → `next build` → `npm run test:e2e
 
 ## Spec files
 
-| Spec | Covers |
-| ---- | ------ |
-| `bearup-home.spec.ts` | Header brand + anchor nav, every home section (`#hero`…`#faq`), key headings, the Give/Zeffy link, the "Plan Your Visit" CTA, the mobile drawer, and the footer |
-| `axe.spec.ts` | `@axe-core/playwright` guardrail — fails on NEW serious/critical WCAG 2.x A/AA violations (pre-existing `color-contrast` is allowlisted) |
-| `cookie-consent.spec.ts` | Cookie banner + preferences modal |
-| `copyright.spec.ts` | Footer copyright line (org name + current year) |
-| `google-tag-manager.spec.ts` | GTM dataLayer + script injection |
-| `head-meta.spec.ts` | Head contract: CSP meta, OG, manifest link, robots, sitemap, security.txt |
-| `skip-to-content.spec.ts` | Skip link → `#main-content` |
+| Spec                         | Covers                                                                                                                                                          |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `bearup-home.spec.ts`        | Header brand + anchor nav, every home section (`#hero`…`#faq`), key headings, the Give/Zeffy link, the "Plan Your Visit" CTA, the mobile drawer, and the footer |
+| `axe.spec.ts`                | `@axe-core/playwright` guardrail — fails on NEW serious/critical WCAG 2.x A/AA violations (pre-existing `color-contrast` is allowlisted)                        |
+| `cookie-consent.spec.ts`     | Cookie banner + preferences modal                                                                                                                               |
+| `copyright.spec.ts`          | Footer copyright line (org name + current year)                                                                                                                 |
+| `google-tag-manager.spec.ts` | GTM dataLayer + script injection                                                                                                                                |
+| `head-meta.spec.ts`          | Head contract: CSP meta, OG, manifest link, robots, sitemap, security.txt                                                                                       |
+| `skip-to-content.spec.ts`    | Skip link → `#main-content`                                                                                                                                     |
 
 ## Configuration
 
@@ -42,7 +42,13 @@ export const testConfig = {
   cookieConsent: {
     bannerHeading: 'We Value Your Privacy',
     modalHeading: 'Cookie Preferences',
-    buttons: { acceptAll: 'Accept All', declineAll: 'Decline All', customize: 'Customize', savePreferences: 'Save Preferences', cancel: 'Cancel' },
+    buttons: {
+      acceptAll: 'Accept All',
+      declineAll: 'Decline All',
+      customize: 'Customize',
+      savePreferences: 'Save Preferences',
+      cancel: 'Cancel',
+    },
   },
 }
 ```

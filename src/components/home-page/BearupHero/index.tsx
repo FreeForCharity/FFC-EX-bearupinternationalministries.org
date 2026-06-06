@@ -220,10 +220,23 @@ const BearupHero: React.FC = () => {
             }}
           >
             <div
-              className="church-ph"
-              data-label="Pastor / Church Photo"
-              style={{ width: '100%', height: '100%', borderRadius: '50%' }}
-            />
+              style={{
+                position: 'relative',
+                width: '100%',
+                height: '100%',
+                borderRadius: '50%',
+                overflow: 'hidden',
+              }}
+            >
+              <Image
+                src={assetPath('/Images/hero-circle.jpg')}
+                alt="Worship"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                sizes="430px"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

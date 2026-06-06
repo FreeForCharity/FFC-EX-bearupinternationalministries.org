@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image'
+import { assetPath } from '@/lib/assetPath'
 
 const values = [
   {
@@ -67,14 +69,44 @@ const BearupAbout: React.FC = () => {
         {/* Art column */}
         <div style={{ position: 'relative' }}>
           <div
-            className="church-ph"
-            data-label="Congregation / Pastor Photo"
             style={{
+              position: 'relative',
               aspectRatio: '4/5',
               borderRadius: '20px',
               boxShadow: 'var(--church-shadow)',
+              overflow: 'hidden',
             }}
-          />
+          >
+            <Image
+              src={assetPath('/Images/about-pastors.jpg')}
+              alt="Pastor Bearup and wife"
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'center top' }}
+              sizes="(max-width: 900px) 100vw, 50vw"
+              priority
+            />
+          </div>
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '80px',
+              left: '-24px',
+              width: '160px',
+              height: '120px',
+              borderRadius: '14px',
+              boxShadow: 'var(--church-shadow)',
+              overflow: 'hidden',
+              border: '4px solid #fff',
+            }}
+          >
+            <Image
+              src={assetPath('/Images/about-church.jpg')}
+              alt="Church building"
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="160px"
+            />
+          </div>
           <div
             style={{
               marginTop: '18px',

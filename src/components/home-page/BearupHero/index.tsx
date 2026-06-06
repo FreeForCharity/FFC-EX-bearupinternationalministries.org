@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image'
+import { assetPath } from '@/lib/assetPath'
 
 const BearupHero: React.FC = () => {
   return (
@@ -11,6 +13,25 @@ const BearupHero: React.FC = () => {
         background: '#2e6f8e',
       }}
     >
+      {/* Background worship photo */}
+      <Image
+        src={assetPath('/Images/hero-worship.jpg')}
+        alt=""
+        fill
+        style={{ objectFit: 'cover', objectPosition: 'center', zIndex: 0 }}
+        sizes="100vw"
+        priority
+        aria-hidden="true"
+      />
+      {/* Dark overlay for text readability */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(17, 53, 99, 0.72)',
+          zIndex: 1,
+        }}
+      />
       {/* Diagonal white stripe */}
       <div
         style={{
@@ -18,6 +39,7 @@ const BearupHero: React.FC = () => {
           inset: 0,
           background: '#fff',
           clipPath: 'polygon(0% 108%, 100% 30%, 100% 33%, 0% 111%)',
+          zIndex: 2,
         }}
       />
       {/* Orange bottom triangle */}
@@ -27,6 +49,7 @@ const BearupHero: React.FC = () => {
           inset: 0,
           background: '#f58629',
           clipPath: 'polygon(0% 111%, 100% 33%, 100% 100%, 0% 100%)',
+          zIndex: 2,
         }}
       />
 
@@ -34,7 +57,7 @@ const BearupHero: React.FC = () => {
         className="hero-inner-layout"
         style={{
           position: 'relative',
-          zIndex: 2,
+          zIndex: 3,
           display: 'flex',
           gap: '56px',
           alignItems: 'center',

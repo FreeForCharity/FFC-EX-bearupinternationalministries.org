@@ -24,7 +24,13 @@ const boardMembers = [
     role: 'Director',
     photo: assetPath('/Images/patrick-bearup.jpg'),
   },
-  { initial: 'R', bg: '#e2a23b', name: 'Robyn Faucheux', role: 'Director' },
+  {
+    initial: 'R',
+    bg: '#e2a23b',
+    name: 'Robyn Faucheux',
+    role: 'Director',
+    photo: assetPath('/Images/board-robyn-faucheux.jpg'),
+  },
   {
     initial: 'R',
     bg: '#5a8a6a',

@@ -4,6 +4,7 @@ import BearupScripture from '@/components/home-page/BearupScripture'
 import BearupAbout from '@/components/home-page/BearupAbout'
 import BearupVisit from '@/components/home-page/BearupVisit'
 import BearupMinistries from '@/components/home-page/BearupMinistries'
+import BearupOrphanage from '@/components/home-page/BearupOrphanage'
 import BearupSchedule from '@/components/home-page/BearupSchedule'
 import BearupLeadership from '@/components/home-page/BearupLeadership'
 import BearupBoard from '@/components/home-page/BearupBoard'
@@ -27,6 +28,7 @@ const BearupHomePage = () => {
       />
       <BearupVisit />
       <BearupMinistries />
+      <BearupOrphanage />
       <BearupSchedule />
       <BearupLeadership />
       <BearupBoard />

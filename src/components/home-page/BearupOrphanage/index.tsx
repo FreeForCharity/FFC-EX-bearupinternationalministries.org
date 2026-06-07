@@ -70,7 +70,7 @@ const BearupOrphanage: React.FC = () => {
               Support This Ministry →
             </a>
             <a
-              href="#give"
+              href="#orphanage-details"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -106,6 +106,144 @@ const BearupOrphanage: React.FC = () => {
         </div>
       </div>
 
+      {/* Detailed info panel */}
+      <div
+        id="orphanage-details"
+        className="church-wide"
+        style={{
+          marginTop: '72px',
+          background: '#fff',
+          borderRadius: '24px',
+          padding: '52px 56px',
+          boxShadow: 'var(--church-shadow)',
+          scrollMarginTop: '100px',
+        }}
+      >
+        <h3
+          style={{
+            fontFamily: 'var(--church-font-display)',
+            fontSize: 'clamp(24px, 3vw, 34px)',
+            fontWeight: 500,
+            color: 'var(--church-ink)',
+            marginBottom: '16px',
+            lineHeight: 1.15,
+          }}
+        >
+          How We Help
+        </h3>
+        <p
+          style={{
+            fontSize: '17px',
+            lineHeight: 1.7,
+            color: 'var(--church-ink-soft)',
+            maxWidth: '780px',
+            marginBottom: '36px',
+          }}
+        >
+          Our partnership with a children&apos;s orphanage in Mexico is built on a simple
+          conviction: every child deserves to be clothed, cared for, and to know the love of Jesus
+          Christ. Through the generosity of our congregation, we regularly collect and send
+          meaningful donations directly to our partner orphanage.
+        </p>
+
+        <div
+          className="orphanage-items-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '24px',
+            marginBottom: '40px',
+          }}
+        >
+          {[
+            {
+              icon: '👕',
+              title: 'Clothing',
+              desc: 'New and gently used clothing for children of all ages — from infants to teenagers — keeping them warm, dignified, and cared for.',
+            },
+            {
+              icon: '🧸',
+              title: 'Toys',
+              desc: 'Age-appropriate toys and games that bring joy, spark creativity, and remind every child that they are worthy of good gifts.',
+            },
+            {
+              icon: '✝️',
+              title: 'Religious Items',
+              desc: 'Bibles, devotionals, and faith-based materials in Spanish that introduce children to the Word of God and the hope of the Gospel.',
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              style={{
+                padding: '28px 24px',
+                borderRadius: '16px',
+                background: 'var(--church-cream)',
+                border: '1px solid var(--church-line)',
+              }}
+            >
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>{item.icon}</div>
+              <h4
+                style={{
+                  fontFamily: 'var(--church-font-sans)',
+                  fontWeight: 900,
+                  fontSize: '14px',
+                  letterSpacing: '.05em',
+                  textTransform: 'uppercase',
+                  color: 'var(--church-primary)',
+                  margin: '0 0 8px',
+                }}
+              >
+                {item.title}
+              </h4>
+              <p
+                style={{
+                  fontSize: '15px',
+                  lineHeight: 1.6,
+                  color: 'var(--church-ink-soft)',
+                  margin: 0,
+                }}
+              >
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <p
+          style={{
+            fontSize: '17px',
+            lineHeight: 1.7,
+            color: 'var(--church-ink-soft)',
+            maxWidth: '780px',
+            marginBottom: '28px',
+          }}
+        >
+          If you would like to contribute clothing, toys, or religious materials, please bring
+          donations to the church. To support this outreach financially so we can cover shipping and
+          expand our reach, use the button below.
+        </p>
+
+        <a
+          href="#give"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            height: '52px',
+            padding: '0 30px',
+            borderRadius: '26px',
+            fontFamily: 'var(--church-font-sans)',
+            fontSize: '17px',
+            fontWeight: 700,
+            background: 'var(--church-primary)',
+            color: '#fff',
+            textDecoration: 'none',
+            transition: 'opacity .2s ease',
+          }}
+        >
+          Give to Orphanage Outreach →
+        </a>
+      </div>
+
       <style>{`
         @media (max-width: 900px) {
           .orphanage-grid {
@@ -115,6 +253,15 @@ const BearupOrphanage: React.FC = () => {
           .orphanage-grid > div:last-child {
             order: -1;
           }
+        }
+        @media (max-width: 700px) {
+          .orphanage-items-grid { grid-template-columns: 1fr !important; }
+        }
+        #orphanage-details {
+          padding: 36px 24px !important;
+        }
+        @media (min-width: 600px) {
+          #orphanage-details { padding: 52px 56px !important; }
         }
       `}</style>
     </section>

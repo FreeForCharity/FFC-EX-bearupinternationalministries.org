@@ -186,6 +186,30 @@ const Header: React.FC = () => {
           {/* CTA + hamburger */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <a
+              href="https://www.zeffy.com/en-US/donation-form/support-this-ministry-3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="church-cta-btn"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '46px',
+                padding: '0 24px',
+                borderRadius: '23px',
+                fontFamily: 'var(--church-font-sans)',
+                fontSize: '15px',
+                fontWeight: 700,
+                background: '#2a6682',
+                color: '#fff',
+                textDecoration: 'none',
+                border: '2px solid transparent',
+                transition: 'all .22s ease',
+              }}
+            >
+              Donate
+            </a>
+            <a
               href="#visit"
               className="church-cta-btn"
               style={{
@@ -337,6 +361,27 @@ const Header: React.FC = () => {
         </ul>
 
         <a
+          href="https://www.zeffy.com/en-US/donation-form/support-this-ministry-3"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '56px',
+            borderRadius: '28px',
+            fontFamily: 'var(--church-font-sans)',
+            fontSize: '18px',
+            fontWeight: 700,
+            background: '#2a6682',
+            color: '#fff',
+            textDecoration: 'none',
+            marginTop: '18px',
+          }}
+        >
+          Donate
+        </a>
+        <a
           href="#visit"
           onClick={closeDrawer}
           style={{
@@ -351,7 +396,7 @@ const Header: React.FC = () => {
             background: '#f58629',
             color: '#fff',
             textDecoration: 'none',
-            marginTop: '18px',
+            marginTop: '12px',
           }}
         >
           Plan Your Visit

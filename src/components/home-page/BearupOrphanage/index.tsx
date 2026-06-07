@@ -39,47 +39,57 @@ const BearupOrphanage: React.FC = () => {
               marginBottom: '18px',
             }}
           >
-            Bearup International Ministries is committed to caring for the most vulnerable among us.
-            Our Orphanage Outreach brings{' '}
+            Bearup International Ministries partners with an orphanage in{' '}
+            <strong style={{ color: 'var(--church-ink)', fontWeight: 700 }}>Mexico</strong> to bring
+            tangible love and hope to children in need. Our congregation regularly sends{' '}
             <strong style={{ color: 'var(--church-ink)', fontWeight: 700 }}>
-              hope, love, and the Gospel
+              clothing, toys, and religious items
             </strong>{' '}
-            to orphaned and at-risk children around the world.
-          </p>
-          <p
-            style={{
-              fontSize: '19px',
-              lineHeight: 1.65,
-              color: 'var(--church-ink-soft)',
-              marginBottom: '34px',
-            }}
-          >
-            Through partnerships with local ministries, we provide{' '}
-            <strong style={{ color: 'var(--church-ink)', fontWeight: 700 }}>
-              food, shelter, education, and spiritual care
-            </strong>{' '}
-            — surrounding each child with the love of a Father who will never leave them.
+            — ensuring every child knows they are seen, valued, and loved by a God who never forgets
+            them.
           </p>
 
-          <a
-            href="#give"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              height: '52px',
-              padding: '0 30px',
-              borderRadius: '26px',
-              fontFamily: 'var(--church-font-sans)',
-              fontSize: '17px',
-              fontWeight: 700,
-              background: 'var(--church-primary)',
-              color: '#fff',
-              textDecoration: 'none',
-              transition: 'opacity .2s ease',
-            }}
-          >
-            Support This Ministry →
-          </a>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', marginTop: '34px' }}>
+            <a
+              href="#give"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                height: '52px',
+                padding: '0 30px',
+                borderRadius: '26px',
+                fontFamily: 'var(--church-font-sans)',
+                fontSize: '17px',
+                fontWeight: 700,
+                background: 'var(--church-primary)',
+                color: '#fff',
+                textDecoration: 'none',
+                transition: 'opacity .2s ease',
+              }}
+            >
+              Support This Ministry →
+            </a>
+            <a
+              href="#give"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                height: '52px',
+                padding: '0 28px',
+                borderRadius: '26px',
+                fontFamily: 'var(--church-font-sans)',
+                fontSize: '17px',
+                fontWeight: 700,
+                background: 'transparent',
+                color: 'var(--church-primary)',
+                border: '2px solid var(--church-primary)',
+                textDecoration: 'none',
+                transition: 'all .2s ease',
+              }}
+            >
+              Learn More
+            </a>
+          </div>
         </div>
 
         {/* Photo column */}

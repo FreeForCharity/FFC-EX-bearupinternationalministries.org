@@ -1,4 +1,5 @@
 import React from 'react'
+import PayPalButton from '@/components/ui/PayPalButton'
 
 const mailIcon = (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -138,6 +139,21 @@ const BearupGive: React.FC = () => {
             >
               Secure giving powered by Zeffy · 100% of your gift reaches the ministry
             </p>
+
+            <div
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}
+            >
+              <p
+                style={{
+                  fontSize: '13.5px',
+                  color: 'rgba(255,255,255,.8)',
+                  margin: 0,
+                }}
+              >
+                Or give with PayPal / Venmo
+              </p>
+              <PayPalButton hostedButtonId="2APKJ4LM5QSZ2" />
+            </div>
 
             {/* Mail option */}
             <div

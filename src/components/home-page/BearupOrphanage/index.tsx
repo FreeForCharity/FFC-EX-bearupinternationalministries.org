@@ -275,12 +275,12 @@ const BearupOrphanage: React.FC = () => {
           {galleryPhotos.map((photo) => (
             <div
               key={photo.src}
+              className={photo.wide ? 'gallery-item-wide' : undefined}
               style={{
                 position: 'relative',
                 aspectRatio: '4/3',
                 borderRadius: '14px',
                 overflow: 'hidden',
-                gridColumn: photo.wide ? 'span 2' : undefined,
               }}
             >
               <Image
@@ -342,6 +342,9 @@ const BearupOrphanage: React.FC = () => {
         @media (max-width: 700px) {
           .orphanage-items-grid { grid-template-columns: 1fr !important; }
           .orphanage-gallery { grid-template-columns: 1fr !important; }
+        }
+        @media (min-width: 701px) {
+          .gallery-item-wide { grid-column: span 2; }
         }
         #orphanage-details {
           padding: 36px 24px !important;

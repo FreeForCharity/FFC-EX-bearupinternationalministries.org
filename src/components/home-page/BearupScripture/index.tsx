@@ -1,6 +1,18 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
+import { getWeeklyScripture, scriptures, type Scripture } from '@/lib/scriptures'
 
 const BearupScripture: React.FC = () => {
+  const [scripture, setScripture] = useState<Scripture>(scriptures[0])
+
+  useEffect(() => {
+    // Deliberately deferred to the client: the visitor's real Date must be used
+    // (not the build-time snapshot) so the verse keeps rotating weekly without a redeploy.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setScripture(getWeeklyScripture())
+  }, [])
+
   return (
     <section
       id="scripture"
@@ -11,6 +23,7 @@ const BearupScripture: React.FC = () => {
       }}
     >
       <div className="church-wide">
+        <span className="church-eyebrow">Weekly Scripture &amp; Inspiration</span>
         <span
           style={{
             fontFamily: 'var(--church-font-display)',
@@ -20,6 +33,7 @@ const BearupScripture: React.FC = () => {
             opacity: 0.5,
             height: '30px',
             display: 'block',
+            marginTop: '18px',
           }}
         >
           &ldquo;
@@ -36,8 +50,7 @@ const BearupScripture: React.FC = () => {
             color: 'var(--church-primary-deep)',
           }}
         >
-          Go therefore and make disciples of all nations, baptizing them in the name of the Father
-          and of the Son and of the Holy Spirit.
+          {scripture.text}
         </blockquote>
         <cite
           style={{
@@ -52,7 +65,7 @@ const BearupScripture: React.FC = () => {
             color: 'var(--church-accent)',
           }}
         >
-          — Matthew 28:19
+          — {scripture.reference}
         </cite>
       </div>
     </section>

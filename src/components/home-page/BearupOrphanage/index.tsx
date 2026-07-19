@@ -1,4 +1,25 @@
 import React from 'react'
+import Image from 'next/image'
+import { assetPath } from '@/lib/assetPath'
+
+const galleryPhotos = [
+  {
+    src: assetPath('/Images/orphanage-visit.jpg'),
+    alt: 'Ministry team visiting children at the orphanage',
+  },
+  {
+    src: assetPath('/Images/orphanage-clothing.jpg'),
+    alt: 'Clothing donations collected for the orphanage',
+  },
+  {
+    src: assetPath('/Images/orphanage-delivery.jpg'),
+    alt: 'Delivering donation boxes to the orphanage',
+  },
+  {
+    src: assetPath('/Images/orphanage-supplies.jpg'),
+    alt: 'Hygiene and household supplies donated to the orphanage',
+  },
+]
 
 const BearupOrphanage: React.FC = () => {
   return (
@@ -95,14 +116,22 @@ const BearupOrphanage: React.FC = () => {
         {/* Photo column */}
         <div style={{ position: 'relative' }}>
           <div
-            className="church-ph"
-            data-label="Orphanage Outreach Photo"
             style={{
+              position: 'relative',
               aspectRatio: '4/3',
               borderRadius: '20px',
+              overflow: 'hidden',
               boxShadow: 'var(--church-shadow)',
             }}
-          />
+          >
+            <Image
+              src={assetPath('/Images/orphanage-exterior.jpg')}
+              alt="EUNIME orphanage in Mexico, partner of Bearup International Ministries"
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
+              sizes="(max-width: 900px) 100vw, 50vw"
+            />
+          </div>
         </div>
       </div>
 
@@ -209,6 +238,37 @@ const BearupOrphanage: React.FC = () => {
           ))}
         </div>
 
+        {/* Photo gallery */}
+        <div
+          className="orphanage-gallery"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '16px',
+            marginBottom: '40px',
+          }}
+        >
+          {galleryPhotos.map((photo) => (
+            <div
+              key={photo.src}
+              style={{
+                position: 'relative',
+                aspectRatio: '4/3',
+                borderRadius: '14px',
+                overflow: 'hidden',
+              }}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 400px"
+              />
+            </div>
+          ))}
+        </div>
+
         <p
           style={{
             fontSize: '17px',
@@ -256,6 +316,7 @@ const BearupOrphanage: React.FC = () => {
         }
         @media (max-width: 700px) {
           .orphanage-items-grid { grid-template-columns: 1fr !important; }
+          .orphanage-gallery { grid-template-columns: 1fr !important; }
         }
         #orphanage-details {
           padding: 36px 24px !important;

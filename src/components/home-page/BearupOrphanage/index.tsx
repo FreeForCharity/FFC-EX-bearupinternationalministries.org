@@ -24,6 +24,16 @@ const galleryPhotos = [
     wide: false,
   },
   {
+    src: assetPath('/Images/orphanage-child1.jpg'),
+    alt: 'Ministry member with a child at the orphanage',
+    wide: false,
+  },
+  {
+    src: assetPath('/Images/orphanage-child2.jpg'),
+    alt: 'Ministry member with a child at the orphanage',
+    wide: false,
+  },
+  {
     src: assetPath('/Images/orphanage-team.jpg'),
     alt: 'Bearup International Ministries team on outreach mission',
     wide: true,

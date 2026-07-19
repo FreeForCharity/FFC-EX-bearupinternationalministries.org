@@ -14,7 +14,7 @@ const galleryPhotos = [
     wide: false,
   },
   {
-    src: assetPath('/Images/orphanage-delivery.jpg'),
+    src: assetPath('/Images/orphanage-donation-boxes.jpg'),
     alt: 'Delivering donation boxes to the orphanage',
     wide: false,
   },
@@ -24,7 +24,12 @@ const galleryPhotos = [
     wide: false,
   },
   {
-    src: assetPath('/Images/orphanage-child1.jpg'),
+    src: assetPath('/Images/orphanage-girls-dresses.jpg'),
+    alt: 'Ministry member holding girls dresses donated for the orphanage',
+    wide: true,
+  },
+  {
+    src: assetPath('/Images/orphanage-ministry-child1.jpg'),
     alt: 'Ministry member with a child at the orphanage',
     wide: false,
   },

@@ -24,6 +24,11 @@ const galleryPhotos = [
     wide: false,
   },
   {
+    src: assetPath('/Images/orphanage-girls-dresses.jpg'),
+    alt: 'Ministry member holding girls dresses donated for the orphanage',
+    wide: true,
+  },
+  {
     src: assetPath('/Images/orphanage-ministry-child1.jpg'),
     alt: 'Ministry member with a child at the orphanage',
     wide: false,

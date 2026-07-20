@@ -6,42 +6,30 @@ const galleryPhotos = [
   {
     src: assetPath('/Images/orphanage-visit.jpg'),
     alt: 'Ministry team visiting children at the orphanage',
-    wide: false,
   },
   {
     src: assetPath('/Images/orphanage-clothing.jpg'),
     alt: 'Clothing donations collected for the orphanage',
-    wide: false,
   },
   {
     src: assetPath('/Images/orphanage-donation-boxes.jpg'),
     alt: 'Delivering donation boxes to the orphanage',
-    wide: false,
   },
   {
     src: assetPath('/Images/orphanage-supplies.jpg'),
     alt: 'Hygiene and household supplies donated to the orphanage',
-    wide: false,
   },
   {
     src: assetPath('/Images/orphanage-girls-dresses.jpg'),
     alt: 'Ministry member holding girls dresses donated for the orphanage',
-    wide: true,
   },
   {
     src: assetPath('/Images/orphanage-ministry-child1.jpg'),
     alt: 'Ministry member with a child at the orphanage',
-    wide: false,
   },
   {
     src: assetPath('/Images/orphanage-child2.jpg'),
     alt: 'Ministry member with a child at the orphanage',
-    wide: false,
-  },
-  {
-    src: assetPath('/Images/orphanage-team.jpg'),
-    alt: 'Bearup International Ministries team on outreach mission',
-    wide: true,
   },
 ]
 
@@ -275,7 +263,6 @@ const BearupOrphanage: React.FC = () => {
           {galleryPhotos.map((photo) => (
             <div
               key={photo.src}
-              className={photo.wide ? 'gallery-item-wide' : undefined}
               style={{
                 position: 'relative',
                 aspectRatio: '4/3',
@@ -343,8 +330,7 @@ const BearupOrphanage: React.FC = () => {
           .orphanage-items-grid { grid-template-columns: 1fr !important; }
           .orphanage-gallery { grid-template-columns: 1fr !important; }
         }
-        .gallery-item-wide { grid-column: 1 / -1; }
-        #orphanage-details {
+#orphanage-details {
           padding: 36px 24px !important;
         }
         @media (min-width: 600px) {

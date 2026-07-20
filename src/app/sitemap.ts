@@ -25,6 +25,7 @@ type SitemapEntry = {
 // changeFrequency: 'monthly' for content pages, 'yearly' for policy pages.
 export const routes: readonly SitemapEntry[] = [
   { path: '/', changeFrequency: 'weekly', priority: 1.0 },
+  { path: '/international-ministry', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/privacy-policy', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/cookie-policy', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/terms-of-service', changeFrequency: 'yearly', priority: 0.2 },

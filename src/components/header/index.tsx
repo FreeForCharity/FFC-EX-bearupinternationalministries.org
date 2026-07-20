@@ -45,6 +45,7 @@ const navItems = [
   { label: 'Home', href: '#top' },
   { label: 'About', href: '#about' },
   { label: 'Visit', href: '#visit' },
+  { label: 'International Ministry', href: '/international-ministry' },
   { label: 'Ministries', href: '#ministries' },
   { label: 'Schedule', href: '#schedule' },
   { label: 'Leadership', href: '#leadership' },

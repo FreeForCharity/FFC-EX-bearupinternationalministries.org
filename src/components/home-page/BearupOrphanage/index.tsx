@@ -343,9 +343,7 @@ const BearupOrphanage: React.FC = () => {
           .orphanage-items-grid { grid-template-columns: 1fr !important; }
           .orphanage-gallery { grid-template-columns: 1fr !important; }
         }
-        @media (min-width: 701px) {
-          .gallery-item-wide { grid-column: span 2; }
-        }
+        .gallery-item-wide { grid-column: 1 / -1; }
         #orphanage-details {
           padding: 36px 24px !important;
         }

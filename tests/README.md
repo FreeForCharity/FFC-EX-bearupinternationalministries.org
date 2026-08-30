@@ -1,19 +1,19 @@
 # E2E Test Guide
 
 End-to-end tests for the Bearup International Ministries site, run with Playwright
-against a production (`npm run build`) export served locally.
+against a production (`pnpm run build`) export served locally.
 
 ## Running
 
 ```bash
-npm run build          # produce ./out
-npm run test:e2e       # run all specs
-npm run test:e2e:ui    # interactive UI mode
-npm run test:e2e:headed
+pnpm run build          # produce ./out
+pnpm run test:e2e       # run all specs
+pnpm run test:e2e:ui    # interactive UI mode
+pnpm run test:e2e:headed
 ```
 
 These specs also run in CI as part of the **Test and Build** job (`.github/workflows/ci.yml`):
-unit tests → Playwright browser install → `next build` → `npm run test:e2e`.
+unit tests → Playwright browser install → `next build` → `pnpm run test:e2e`.
 
 ## Spec files
 

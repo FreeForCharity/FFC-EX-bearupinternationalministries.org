@@ -210,10 +210,10 @@ const Footer: React.FC = () => {
                   cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
-                  ;(e.target as HTMLButtonElement).style.color = '#f58629'
+                  e.currentTarget.style.color = '#f58629'
                 }}
                 onMouseLeave={(e) => {
-                  ;(e.target as HTMLButtonElement).style.color = 'rgba(255,255,255,.5)'
+                  e.currentTarget.style.color = 'rgba(255,255,255,.5)'
                 }}
               >
                 Cookie Preferences

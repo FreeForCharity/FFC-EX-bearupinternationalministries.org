@@ -193,6 +193,32 @@ const Footer: React.FC = () => {
                 </a>
               </li>
             ))}
+            <li>
+              {/* Persistent consent re-entry point (withdrawing consent must
+                  stay as easy as giving it): reopens the preferences modal
+                  the cookie-consent banner registers on window. */}
+              <button
+                type="button"
+                onClick={() => window.openCookiePreferences?.()}
+                style={{
+                  ...linkStyle,
+                  fontSize: '13.5px',
+                  color: 'rgba(255,255,255,.5)',
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  ;(e.target as HTMLButtonElement).style.color = '#f58629'
+                }}
+                onMouseLeave={(e) => {
+                  ;(e.target as HTMLButtonElement).style.color = 'rgba(255,255,255,.5)'
+                }}
+              >
+                Cookie Preferences
+              </button>
+            </li>
           </ul>
         </div>
 

@@ -13,24 +13,24 @@ describe('Footer component', () => {
     expect(footer).toBeInTheDocument()
   })
 
-  it('should display Endorsements section', () => {
+  it('should display the Bearup International Ministries brand', () => {
     render(<Footer />)
-    expect(screen.getByText('Endorsements')).toBeInTheDocument()
+    expect(screen.getByText('Bearup International Ministries')).toBeInTheDocument()
   })
 
-  it('should display Quick Links section', () => {
+  it('should display the Explore section', () => {
     render(<Footer />)
-    expect(screen.getByText('Quick Links')).toBeInTheDocument()
+    expect(screen.getByText('Explore')).toBeInTheDocument()
   })
 
-  it('should display Contact Us section with contact information', () => {
+  it('should display the Contact section with contact information', () => {
     render(<Footer />)
-    expect(screen.getByText('Contact Us')).toBeInTheDocument()
+    expect(screen.getByText('Contact')).toBeInTheDocument()
+    expect(screen.getByText('Info@bearupinternationalministries.org')).toBeInTheDocument()
   })
 
-  it('should have social media links', () => {
+  it('should have navigation links', () => {
     render(<Footer />)
-    // Check for social media links by their aria-labels or visible text
     const links = screen.getAllByRole('link')
     expect(links.length).toBeGreaterThan(0)
   })
@@ -41,15 +41,15 @@ describe('Footer component', () => {
     expect(screen.getByText(new RegExp(currentYear.toString()))).toBeInTheDocument()
   })
 
-  it('should have GuideStar profile link', () => {
+  it('should link to the privacy policy', () => {
     render(<Footer />)
-    const guidestarLink = screen.getByText(/GuideStar Profile/i)
-    expect(guidestarLink).toBeInTheDocument()
+    const privacyLink = screen.getByText(/Privacy Policy/i)
+    expect(privacyLink).toBeInTheDocument()
+    expect(privacyLink.closest('a')).toHaveAttribute('href', '/privacy-policy')
   })
 
   it('should have email contact link', () => {
     render(<Footer />)
-    // Look for email link
     const links = screen.getAllByRole('link')
     const emailLink = links.find((link) => link.getAttribute('href')?.includes('mailto:'))
     expect(emailLink).toBeDefined()

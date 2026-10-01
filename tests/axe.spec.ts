@@ -26,8 +26,10 @@ const BASELINE_ALLOWLIST = new Set<string>([
 
 test.describe('axe-core homepage guardrail', () => {
   test('homepage has no new serious or critical violations', async ({ page }) => {
-    await page.goto('/')
-    await page.waitForLoadState('networkidle')
+    // Use 'load' rather than 'networkidle': GTM / analytics beacons keep the
+    // network busy in CI, so 'networkidle' flakes into timeouts. The page is a
+    // static export, so the DOM axe needs is already present at load.
+    await page.goto('/', { waitUntil: 'load' })
 
     const results = await new AxeBuilder({ page })
       .include('body')

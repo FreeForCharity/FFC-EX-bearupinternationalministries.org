@@ -1,8 +1,17 @@
 import type { Metadata } from 'next'
 
+/*
+ * TODO (church/legal to confirm before publishing):
+ *  - Legal entity name & EIN for the 501(c)(3)
+ *  - Actual data-collection & cookie practices (analytics: GTM GTM-TQ5H8HPR; donations: Zeffy)
+ *  - Verify the third-party services list matches what the site actually loads
+ *  - Effective/last-updated date
+ * This is an automated first-draft rebrand; legal content has NOT been reviewed.
+ */
+
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Free For Charity',
-  description: 'Privacy Policy for Free For Charity website',
+  title: 'Privacy Policy | Bearup International Ministries',
+  description: 'Privacy Policy for Bearup International Ministries website',
 }
 
 export default function PrivacyPolicy() {
@@ -27,10 +36,11 @@ export default function PrivacyPolicy() {
             </li>
           </ol>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            At Free for Charity, accessible from https://freeforcharity.org, your privacy is one of
-            our primary concerns. This Privacy Policy document contains types of information we
-            collect and record, and how we use it. By using our website, you hereby consent to our
-            Privacy Policy and agree to its terms.
+            At Bearup International Ministries, accessible from
+            https://bearupinternationalministries.org, your privacy is one of our primary concerns.
+            This Privacy Policy document contains types of information we collect and record, and
+            how we use it. By using our website, you hereby consent to our Privacy Policy and agree
+            to its terms.
           </p>
 
           {/* Section 2 */}
@@ -42,7 +52,7 @@ export default function PrivacyPolicy() {
             </li>
           </ol>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            Our website address is: https://freeforcharity.org
+            Our website address is: https://bearupinternationalministries.org
           </p>
 
           {/* Section 3 */}
@@ -135,39 +145,15 @@ export default function PrivacyPolicy() {
           </ul>
 
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.4. Microsoft Forms - Application Forms</strong>
+            <strong>3.4. Event &amp; Visit Request Form</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            We use Microsoft Forms (forms.office.com) for our charity application process. When you
-            submit an application through our website:
+            Our website offers an on-page event &amp; visit request form so you can let us know you
+            would like to attend an event or arrange a visit. The form runs in your browser and the
+            church follows up with you directly using the contact details you provide. We use the
+            information only to respond to your request.
+            {/* TODO: church to confirm exactly what data this form collects, how it is delivered/stored, and any third-party processor involved. */}
           </p>
-          <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Data Collected:</strong> Information you provide in the application form
-              (name, email, organization details, etc.)
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Third-Party Processing:</strong> Microsoft Forms is a service provided by
-              Microsoft Corporation. Your form submissions are processed according to
-              Microsoft&apos;s privacy policies.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Additional Third-Party Services:</strong> Microsoft Forms may use additional
-              services (including HubSpot) for form analytics and feedback collection. These are
-              controlled by Microsoft, not Free For Charity.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Privacy Policy:</strong> Review Microsoft&apos;s privacy practices at{' '}
-              <a
-                href="https://privacy.microsoft.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#007bff] underline"
-              >
-                https://privacy.microsoft.com/
-              </a>
-            </li>
-          </ul>
 
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
             <strong>3.5. Embedded Content from Other Websites</strong>
@@ -322,7 +308,7 @@ export default function PrivacyPolicy() {
             </li>
           </ul>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            To exercise these rights, please contact us at 520-222-8104.
+            To exercise these rights, please contact us at (907) 262-8741.
           </p>
 
           {/* Section 8 */}
@@ -456,10 +442,13 @@ export default function PrivacyPolicy() {
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Email:</strong>{' '}
-              <a href="mailto:clarkemoyer@freeforcharity.org" className="text-[#007bff] underline">
-                clarkemoyer@freeforcharity.org
+              <a
+                href="mailto:Info@bearupinternationalministries.org"
+                className="text-[#007bff] underline"
+              >
+                Info@bearupinternationalministries.org
               </a>{' '}
-              520-222-8104
+              (907) 262-8741
             </li>
           </ul>
 
@@ -481,11 +470,15 @@ export default function PrivacyPolicy() {
           </p>
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Contact DPO:</strong> Clarke Moyer{' '}
-              <a href="mailto:clarkemoyer@freeforcharity.org" className="text-[#007bff] underline">
-                clarkemoyer@freeforcharity.org
+              {/* TODO: church to confirm the responsible privacy contact / DPO name. */}
+              <strong>Contact:</strong>{' '}
+              <a
+                href="mailto:Info@bearupinternationalministries.org"
+                className="text-[#007bff] underline"
+              >
+                Info@bearupinternationalministries.org
               </a>{' '}
-              520-222-8104
+              (907) 262-8741
             </li>
           </ul>
 

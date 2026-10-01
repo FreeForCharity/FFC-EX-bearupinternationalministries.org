@@ -1,258 +1,390 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
-import { Mail, Phone, MapPin, ArrowRight, Link2 } from 'lucide-react'
 
-import { FaFacebookF, FaLinkedinIn, FaGithub } from 'react-icons/fa'
-import { FaXTwitter } from 'react-icons/fa6'
-import type { IconType } from 'react-icons'
-import type { LucideIcon } from 'lucide-react'
+const BearupEmblem = () => (
+  <svg
+    viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-label="Bearup International Ministries emblem"
+    style={{ width: '56px', height: '56px', display: 'block', marginBottom: '18px' }}
+  >
+    <circle cx="50" cy="50" r="49" fill="#2a6682" />
+    <circle
+      cx="50"
+      cy="50"
+      r="44.5"
+      fill="none"
+      stroke="#ffffff"
+      strokeOpacity=".22"
+      strokeWidth="1.5"
+    />
+    <g fill="none" stroke="#ffffff" strokeLinecap="round">
+      <circle
+        cx="50"
+        cy="64"
+        r="21"
+        strokeOpacity=".5"
+        strokeWidth="2"
+        fill="#ffffff"
+        fillOpacity=".06"
+      />
+      <ellipse cx="50" cy="64" rx="8.5" ry="21" strokeOpacity=".4" strokeWidth="1.6" />
+      <path d="M30.4 57.5H69.6" strokeOpacity=".38" strokeWidth="1.6" />
+      <path d="M31.6 71H68.4" strokeOpacity=".38" strokeWidth="1.6" />
+    </g>
+    <g fill="#e2a23b">
+      <rect x="46.6" y="12" width="6.8" height="39" rx="2" />
+      <rect x="38" y="24.6" width="24" height="6.8" rx="2" />
+    </g>
+  </svg>
+)
 
-import { siteConfig } from '@/lib/site.config'
-import { assetPath } from '@/lib/assetPath'
+const mailIcon = (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="m2 6 10 7 10-7" />
+  </svg>
+)
 
-// Maps a social link's label (as defined in siteConfig.social) to an icon.
-// Unknown labels fall back to a generic link icon (Link2 from lucide-react)
-// so a charity that adds a new social network — Bluesky, Mastodon, YouTube,
-// etc. — gets a sensible placeholder instead of a misleading GitHub mark.
-const socialIconByLabel: Record<string, IconType | LucideIcon> = {
-  Facebook: FaFacebookF,
-  'X (Twitter)': FaXTwitter,
-  Twitter: FaXTwitter,
-  X: FaXTwitter,
-  LinkedIn: FaLinkedinIn,
-  GitHub: FaGithub,
-}
+const pinIcon = (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+)
+
+const phoneIcon = (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+  </svg>
+)
 
 const Footer: React.FC = () => {
   const currentYear = React.useMemo(() => new Date().getFullYear(), [])
-  const socialLinks = siteConfig.social.filter((s) => s.href)
+
+  const linkStyle: React.CSSProperties = {
+    color: 'rgba(255,255,255,.72)',
+    fontSize: '15.5px',
+    fontWeight: 500,
+    textDecoration: 'none',
+    transition: 'color .2s ease',
+    display: 'block',
+    lineHeight: 1.4,
+  }
+
+  const contactRowStyle: React.CSSProperties = {
+    display: 'flex',
+    gap: '14px',
+    alignItems: 'flex-start',
+    marginBottom: '18px',
+  }
+
   return (
-    <footer className="bg-black text-white">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-12 px-4 md:px-6 lg:px-8">
-        {/* Column 1: Endorsements */}
-        <div className="space-y-6 px-4 sm:px-0">
-          <h3 className="text-[28px] text-white">Endorsements</h3>
-
-          <div className="space-y-4">
-            <a
-              href="https://www.guidestar.org/profile/46-2471893"
-              aria-label={`View ${siteConfig.name} GuideStar Profile`}
-            >
-              <img
-                src={assetPath('/Svgs/footerImage.svg')}
-                alt="GuideStar Platinum Seal of Transparency"
-              />
-            </a>
-            <Link
-              href="https://www.guidestar.org/profile/shared/bbbe173a-87b9-4af9-a8a2-cae255a95742"
-              className="group relative my-4 flex w-full max-w-[230px] items-center justify-between
-                border-2 border-[#2ea3f2] bg-black px-5 py-2.5 text-[#2ea3f2]
-                transition-all duration-300 hover:border-transparent"
-              id="aria-font"
-            >
-              <span className="text-[17px] font-medium leading-tight sm:text-[18px] md:text-[20px] transition-transform duration-300 group-hover:-translate-x-1">
-                Direct GuideStar Profile Link
-              </span>
-
-              <ArrowRight
-                className="h-8 w-8 translate-x-2 opacity-0 text-[#2ea3f2] transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
-                strokeWidth={2}
-              />
-            </Link>
-
-            <p>
-              <span className="font-[500] text-[22px]">Free For Charity EIN: 46-2471893</span>
-            </p>
-          </div>
+    <footer style={{ background: '#11181c', color: '#fff' }}>
+      <div
+        className="church-wide footer-grid"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1.4fr 1fr 1.2fr',
+          gap: '48px',
+          padding: '72px 0 40px',
+        }}
+      >
+        {/* Column 1: Brand */}
+        <div>
+          <BearupEmblem />
+          <h3
+            style={{
+              fontFamily: 'var(--church-font-display)',
+              fontSize: '22px',
+              fontWeight: 600,
+              marginBottom: '20px',
+              color: '#fff',
+              margin: '0 0 20px',
+              lineHeight: 1.1,
+            }}
+          >
+            Bearup International Ministries
+          </h3>
+          <p
+            style={{
+              color: 'rgba(255,255,255,.66)',
+              fontSize: '15.5px',
+              lineHeight: 1.6,
+              maxWidth: '340px',
+              margin: 0,
+            }}
+          >
+            A Spirit-filled family bringing Jesus Christ to the world — worshipping, growing, and
+            going to the nations.
+          </p>
         </div>
 
-        {/* Column 2: Quick Links */}
-        <div className="space-y-6 px-4 sm:px-0">
-          <h3 className="text-[28px] text-white">Quick Links</h3>
-
-          <ul className="space-y-2 text-sm" id="lato-font">
+        {/* Column 2: Explore */}
+        <div>
+          <h3
+            style={{
+              fontFamily: 'var(--church-font-display)',
+              fontSize: '22px',
+              fontWeight: 600,
+              color: '#fff',
+              margin: '0 0 20px',
+              lineHeight: 1.1,
+            }}
+          >
+            Explore
+          </h3>
+          <ul
+            style={{
+              listStyle: 'none',
+              margin: '0 0 32px',
+              padding: 0,
+              display: 'grid',
+              gap: '11px',
+            }}
+          >
             {[
-              { name: 'Home', href: '/#hero' },
-              { name: 'Mission', href: '/#mission' },
-              { name: 'Programs', href: '/#programs' },
-              { name: 'Events', href: '/#events' },
-              { name: 'Donate', href: '/#donate' },
-              { name: 'Volunteer', href: '/#volunteer' },
-              { name: 'FAQ', href: '/#faq' },
-              { name: 'Team', href: '/#team' },
-              {
-                name: 'Supported Charity Login',
-                href: 'https://freeforcharity.org/hub/',
-              },
-            ].map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  target={link.href.startsWith('http') ? '_blank' : undefined}
-                  className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500]"
+              { label: 'About Us', href: '#about' },
+              { label: 'Plan Your Visit', href: '#visit' },
+              { label: 'Ministries', href: '#ministries' },
+              { label: 'Weddings & Events', href: '#schedule' },
+              { label: 'Leadership', href: '#leadership' },
+              { label: 'Board of Directors', href: '#board' },
+              { label: 'Give', href: '#give' },
+            ].map((l) => (
+              <li key={l.label}>
+                <a
+                  href={l.href}
+                  style={linkStyle}
+                  onMouseEnter={(e) => {
+                    ;(e.target as HTMLAnchorElement).style.color = '#f58629'
+                  }}
+                  onMouseLeave={(e) => {
+                    ;(e.target as HTMLAnchorElement).style.color = 'rgba(255,255,255,.72)'
+                  }}
                 >
-                  {link.name}
-                </Link>
+                  {l.label}
+                </a>
               </li>
             ))}
           </ul>
 
-          <div className="space-y-3">
-            <h4 className="text-[28px] text-white">Free For Charity Policy</h4>
-            <ul className="space-y-1 text-sm" id="lato-font">
-              {[
-                {
-                  name: 'Free For Charity Donation Policy',
-                  href: '/free-for-charity-donation-policy',
-                },
-                {
-                  name: 'Donation Policy',
-                  href: '/donation-policy',
-                },
-                {
-                  name: 'Free For Charity Privacy Policy',
-                  href: '/privacy-policy',
-                },
-                {
-                  name: 'Free For Charity Cookie Policy',
-                  href: '/cookie-policy',
-                },
-                {
-                  name: 'Free For Charity Terms of Service',
-                  href: '/terms-of-service',
-                },
-                {
-                  name: 'Free For Charity Vulnerability Disclosure Policy',
-                  href: '/vulnerability-disclosure-policy',
-                },
-                {
-                  name: 'Free For Charity Security Acknowledgement',
-                  href: '/security-acknowledgements',
-                },
-              ].map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500]"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Policies */}
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gap: '8px' }}>
+            {[
+              { label: 'Privacy Policy', href: '/privacy-policy' },
+              { label: 'Terms of Service', href: '/terms-of-service' },
+              { label: 'Cookie Policy', href: '/cookie-policy' },
+            ].map((l) => (
+              <li key={l.label}>
+                <a
+                  href={l.href}
+                  style={{ ...linkStyle, fontSize: '13.5px', color: 'rgba(255,255,255,.5)' }}
+                  onMouseEnter={(e) => {
+                    ;(e.target as HTMLAnchorElement).style.color = '#f58629'
+                  }}
+                  onMouseLeave={(e) => {
+                    ;(e.target as HTMLAnchorElement).style.color = 'rgba(255,255,255,.5)'
+                  }}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Column 3: Contact Us */}
-        <div className="space-y-6 px-4 sm:px-0">
-          <h3 className="text-[28px] text-white">Contact Us</h3>
+        {/* Column 3: Contact */}
+        <div>
+          <h3
+            style={{
+              fontFamily: 'var(--church-font-display)',
+              fontSize: '22px',
+              fontWeight: 600,
+              color: '#fff',
+              margin: '0 0 20px',
+              lineHeight: 1.1,
+            }}
+          >
+            Contact
+          </h3>
 
-          <div className="space-y-4 text-sm">
-            <div className="flex items-start gap-3">
-              <Mail className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-[500] text-[22px]">E-mail</p>
-                <a
-                  href={`mailto:${siteConfig.contactEmail}`}
-                  className="font-[500] text-[15px] hover:text-cyan-400 transition-colors break-all"
-                  id="aria-font"
-                >
-                  {siteConfig.contactEmail}
-                </a>
+          <div style={contactRowStyle}>
+            <span style={{ color: '#f58629', flex: 'none', marginTop: '2px' }}>{mailIcon}</span>
+            <div>
+              <div
+                style={{
+                  fontSize: '13px',
+                  letterSpacing: '.12em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,.5)',
+                  fontWeight: 700,
+                }}
+              >
+                Email
               </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <Phone className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-[500] text-[22px]">Call Us Today</p>
-                <a
-                  href="tel:5202228104"
-                  className="font-[500] text-[16px] hover:text-cyan-400 transition-colors"
-                  id="aria-font"
-                >
-                  (520) 222-8104
-                </a>
-              </div>
-            </div>
-
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=4030+Wake+Forrest+Road+Suite+349+Raleigh+NC+27609"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open main address in Google Maps"
-              className="flex items-start gap-3 hover:opacity-80 transition-opacity"
-            >
-              <MapPin className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-[500] text-[22px]">Main Address</p>
-                <p className="font-[500] text-[16px]" id="aria-font">
-                  4030 Wake Forrest Road
-                  <br />
-                  Suite 349 Raleigh North
-                  <br />
-                  Carolina 27609
-                </p>
-              </div>
-            </a>
-
-            <a
-              href="https://www.google.com/maps/place/Free+For+Charity/@40.7768455,-77.8963305,17z/data=!3m1!4b1!4m6!3m5!1s0x89cea944b44a2e01:0x6fc2d6bf09e00a0f!8m2!3d40.7768415!4d-77.8937556!16s%2Fg%2F11vzvbl2d7?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open PA office address in Google Maps"
-              className="flex items-start gap-3 hover:opacity-80 transition-opacity"
-            >
-              <MapPin className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-[500] text-[22px]">PA Office Address</p>
-                <p className="font-[500] text-[16px]" id="aria-font">
-                  301 Science Park Road Suite
-                  <br />
-                  119 State College PA 16803
-                </p>
-              </div>
-            </a>
-
-            <div className="flex gap-3 pt-4">
-              {socialLinks.map(({ href, label }) => {
-                const Icon = socialIconByLabel[label] ?? Link2
-                return (
-                  <a
-                    key={`${label}-${href}`}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="bg-orange-500 p-2 rounded-full hover:bg-orange-600 transition-colors"
-                  >
-                    <Icon className="w-6 h-6 text-white" />
-                  </a>
-                )
-              })}
+              <a
+                href="mailto:Info@bearupinternationalministries.org"
+                style={{
+                  color: 'rgba(255,255,255,.88)',
+                  fontSize: '15px',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                }}
+              >
+                Info@bearupinternationalministries.org
+              </a>
             </div>
           </div>
+
+          <div style={contactRowStyle}>
+            <span style={{ color: '#f58629', flex: 'none', marginTop: '2px' }}>{phoneIcon}</span>
+            <div>
+              <div
+                style={{
+                  fontSize: '13px',
+                  letterSpacing: '.12em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,.5)',
+                  fontWeight: 700,
+                }}
+              >
+                Phone
+              </div>
+              <a
+                href="tel:+19072628741"
+                style={{
+                  color: 'rgba(255,255,255,.88)',
+                  fontSize: '16px',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                }}
+              >
+                (907) 262-8741
+              </a>
+            </div>
+          </div>
+
+          <div style={contactRowStyle}>
+            <span style={{ color: '#f58629', flex: 'none', marginTop: '2px' }}>{pinIcon}</span>
+            <div>
+              <div
+                style={{
+                  fontSize: '13px',
+                  letterSpacing: '.12em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,.5)',
+                  fontWeight: 700,
+                }}
+              >
+                Mailing Address
+              </div>
+              <p
+                style={{
+                  color: 'rgba(255,255,255,.88)',
+                  fontSize: '16px',
+                  fontWeight: 500,
+                  margin: 0,
+                  lineHeight: 1.5,
+                }}
+              >
+                PO Box 2763
+                <br />
+                Soldotna, AK 99669
+              </p>
+            </div>
+          </div>
+
+          <div style={{ ...contactRowStyle, marginBottom: 0 }}>
+            <span style={{ color: '#f58629', flex: 'none', marginTop: '2px' }}>{pinIcon}</span>
+            <div>
+              <div
+                style={{
+                  fontSize: '13px',
+                  letterSpacing: '.12em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,.5)',
+                  fontWeight: 700,
+                }}
+              >
+                Gather With Us
+              </div>
+              <p
+                style={{
+                  color: 'rgba(255,255,255,.88)',
+                  fontSize: '15px',
+                  fontWeight: 500,
+                  margin: 0,
+                  lineHeight: 1.55,
+                }}
+              >
+                Family Bible Fellowship and Academy
+                <br />
+                41212 Sterling Highway
+                <br />
+                Soldotna, Alaska 99669
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="#visit"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginTop: '20px',
+              height: '46px',
+              padding: '0 24px',
+              borderRadius: '23px',
+              fontFamily: 'var(--church-font-sans)',
+              fontSize: '15px',
+              fontWeight: 700,
+              background: '#f58629',
+              color: '#fff',
+              textDecoration: 'none',
+              transition: 'background .2s ease',
+            }}
+          >
+            Plan Your Visit
+          </a>
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom bar */}
       <div
-        className="mt-12 py-6 px-4 border-t border-gray-800 text-center text-[18px] font-[500] w-full"
-        id="aria-font"
+        style={{
+          borderTop: '1px solid rgba(255,255,255,.1)',
+          padding: '24px 0',
+          textAlign: 'center',
+        }}
       >
-        <p>
-          © {currentYear} All Rights Are Reserved by {siteConfig.name} a US 501c3 Non Profit | A
-          project of{' '}
-          <Link
-            href="https://freeforcharity.org"
-            className="underline text-[#2EA3F2] hover:text-[#2EA3F2] transition-colors"
-          >
-            https://freeforcharity.org
-          </Link>
+        <p
+          style={{
+            maxWidth: '760px',
+            margin: '0 auto 10px',
+            fontSize: '13px',
+            lineHeight: 1.55,
+            color: 'rgba(255,255,255,.5)',
+          }}
+        >
+          Bearup International Ministries is a ministry of Family Bible Fellowship and Academy, a
+          registered 501(c)(3) non-profit organization. All donations are tax-deductible to the
+          fullest extent allowed by law.
+        </p>
+        <p style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.6)', margin: 0 }}>
+          © {currentYear} Bearup International Ministries. All rights reserved. · Bringing Jesus
+          Christ to the World
         </p>
       </div>
+
+      <style>{`
+        @media (max-width: 880px) {
+          .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding-top: 48px !important; }
+        }
+      `}</style>
     </footer>
   )
 }

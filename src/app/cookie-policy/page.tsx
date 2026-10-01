@@ -1,8 +1,17 @@
 import type { Metadata } from 'next'
 
+/*
+ * TODO (church/legal to confirm before publishing):
+ *  - Legal entity name & EIN for the 501(c)(3)
+ *  - Actual data-collection & cookie practices (analytics: GTM GTM-TQ5H8HPR; donations: Zeffy)
+ *  - Verify the third-party services list matches what the site actually loads
+ *  - Effective/last-updated date
+ * This is an automated first-draft rebrand; legal content has NOT been reviewed.
+ */
+
 export const metadata: Metadata = {
-  title: 'Cookie Policy | Free For Charity',
-  description: 'Cookie Policy for Free For Charity website',
+  title: 'Cookie Policy | Bearup International Ministries',
+  description: 'Cookie Policy for Bearup International Ministries website',
 }
 
 // Update this date when the policy changes
@@ -104,65 +113,18 @@ export default function CookiePolicy() {
             <strong>3.2 Functional Cookies (Always Active)</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            These cookies enable essential functionality such as donation processing and application
-            forms. They are necessary for these services to work and cannot be disabled if you wish
-            to use these features.
+            These cookies enable essential functionality such as donation processing. They are
+            necessary for these services to work and cannot be disabled if you wish to use these
+            features.
           </p>
 
-          {/* Microsoft Forms */}
+          {/* Event & Visit Request Form */}
           <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <h4 className="font-semibold mb-2 text-[#333]">Microsoft Forms</h4>
+            <h4 className="font-semibold mb-2 text-[#333]">Event &amp; Visit Request Form</h4>
             <p className="text-sm mb-2 text-[#666]">
-              Used for our charity application form. Microsoft Forms may load additional third-party
-              services (including HubSpot) for form analytics and feedback collection. These
-              services are controlled by Microsoft.
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-2 pr-4 text-[#333]">Service</th>
-                    <th className="text-left py-2 pr-4 text-[#333]">Purpose</th>
-                    <th className="text-left py-2 text-[#333]">Load Trigger</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="py-2 pr-4 font-mono text-[#666]">Microsoft Forms</td>
-                    <td className="py-2 pr-4 text-[#666]">Charity application form processing</td>
-                    <td className="py-2 text-[#666]">When application modal opened</td>
-                  </tr>
-                  <tr>
-                    <td className="py-2 pr-4 font-mono text-[#666]">
-                      HubSpot (via Microsoft Forms)
-                    </td>
-                    <td className="py-2 pr-4 text-[#666]">Form analytics and feedback</td>
-                    <td className="py-2 text-[#666]">Loaded by Microsoft Forms</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="text-xs mt-2 text-gray-600">
-              Privacy Policy:{' '}
-              <a
-                href="https://privacy.microsoft.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                https://privacy.microsoft.com/
-              </a>
-            </p>
-            <p className="text-xs mt-1 text-gray-600">
-              HubSpot Privacy:{' '}
-              <a
-                href="https://legal.hubspot.com/privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                https://legal.hubspot.com/privacy-policy
-              </a>
+              Our website offers an on-page event &amp; visit request form. It runs in your browser,
+              and the church follows up with you directly using the contact details you provide.
+              {/* TODO: church to confirm whether this form sets any cookies or uses a third-party processor. */}
             </p>
           </div>
 
@@ -492,17 +454,17 @@ export default function CookiePolicy() {
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Email:</strong>{' '}
-              <a href="mailto:privacy@freeforcharity.org" className="text-blue-600 hover:underline">
-                privacy@freeforcharity.org
+              <a
+                href="mailto:Info@bearupinternationalministries.org"
+                className="text-blue-600 hover:underline"
+              >
+                Info@bearupinternationalministries.org
               </a>
             </li>
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Emergency Contact:</strong> Clarke Moyer
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Phone:</strong>{' '}
-              <a href="tel:520-222-8104" className="text-blue-600 hover:underline">
-                520-222-8104
+              <a href="tel:+19072628741" className="text-blue-600 hover:underline">
+                (907) 262-8741
               </a>
             </li>
           </ul>

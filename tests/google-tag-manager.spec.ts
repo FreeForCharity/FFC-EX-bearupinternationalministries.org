@@ -16,6 +16,7 @@ import { testConfig } from './test.config'
 test.describe('Google Tag Manager Integration', () => {
   test('should initialize dataLayer on page load', async ({ page }) => {
     await page.goto('/')
+    await page.waitForFunction(() => Array.isArray((window as { dataLayer?: unknown[] }).dataLayer))
 
     // Check if dataLayer exists and is initialized
     const hasDataLayer = await page.evaluate(() => {
@@ -27,6 +28,7 @@ test.describe('Google Tag Manager Integration', () => {
 
   test('should load GTM script with correct ID', async ({ page }) => {
     await page.goto('/')
+    await page.waitForSelector('script#gtm-script', { state: 'attached' })
 
     // Check for GTM script element
     const gtmScript = await page.locator('script[id="gtm-script"]').count()
@@ -50,6 +52,7 @@ test.describe('Google Tag Manager Integration', () => {
 
   test('should push events to dataLayer', async ({ page }) => {
     await page.goto('/')
+    await page.waitForFunction(() => Array.isArray((window as { dataLayer?: unknown[] }).dataLayer))
 
     // Verify we can push events to dataLayer
     const canPushToDataLayer = await page.evaluate(() => {
@@ -65,10 +68,10 @@ test.describe('Google Tag Manager Integration', () => {
 
   test('should load GTM script after page interaction', async ({ page }) => {
     await page.goto('/')
+    await page.waitForSelector('script#gtm-script', { state: 'attached' })
 
-    // Verify GTM script exists on the page
-    // Note: Next.js Script component with lazyOnload strategy
-    // defers script loading until after page is interactive
+    // Verify GTM script exists on the page (afterInteractive injects it
+    // right after hydration)
     const gtmScript = await page.evaluate(() => {
       const script = document.querySelector('script[id="gtm-script"]')
       return script !== null
@@ -116,6 +119,7 @@ test.describe('Google Tag Manager Configuration', () => {
     // The GTM_ID is configured in the component
 
     await page.goto('/')
+    await page.waitForSelector('script#gtm-script', { state: 'attached' })
 
     // GTM script should always be present with the configured ID
     const gtmScript = await page.locator('script[id="gtm-script"]').count()

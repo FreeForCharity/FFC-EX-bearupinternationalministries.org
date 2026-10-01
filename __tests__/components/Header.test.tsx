@@ -30,37 +30,38 @@ describe('Header component', () => {
     expect(screen.getByRole('banner')).toBeInTheDocument()
   })
 
-  it('should display the Free For Charity logo', () => {
+  it('should display the Bearup International Ministries brand', () => {
     render(<Header />)
-    // Check for logo image with alt text
-    expect(screen.getByAltText('Free For Charity')).toBeInTheDocument()
+    // SVG emblem exposes the ministry name via aria-label
+    expect(screen.getByLabelText('Bearup International Ministries emblem')).toBeInTheDocument()
+    // Brand wordmark
+    expect(screen.getByText('Bearup International')).toBeInTheDocument()
   })
 
   it('should display Home navigation link', () => {
     render(<Header />)
-    // Home link should always be present in navigation
-    expect(screen.getByText('Home')).toBeInTheDocument()
+    // "Home" renders in both the desktop nav and the mobile drawer
+    expect(screen.getAllByText('Home').length).toBeGreaterThan(0)
   })
 
   it('should have navigation links', () => {
     render(<Header />)
-    // Check that navigation has at least some links
     const links = screen.getAllByRole('link')
     expect(links.length).toBeGreaterThan(0)
   })
 
   it('should have a mobile menu button', () => {
     render(<Header />)
-    // Look for the menu icon button
+    // Open + close menu controls
+    expect(screen.getByLabelText('Open menu')).toBeInTheDocument()
     const buttons = screen.getAllByRole('button')
     expect(buttons.length).toBeGreaterThan(0)
   })
 
-  it('should have search functionality button', () => {
+  it('should have a "Plan Your Visit" call to action', () => {
     render(<Header />)
-    const buttons = screen.getAllByRole('button')
-    // Should have at least menu and search buttons
-    expect(buttons.length).toBeGreaterThanOrEqual(2)
+    // Appears in both the header bar and the mobile drawer
+    expect(screen.getAllByText('Plan Your Visit').length).toBeGreaterThan(0)
   })
 
   it('should not have accessibility violations', async () => {
